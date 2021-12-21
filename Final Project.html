@@ -1,0 +1,306 @@
+//Nancy Bitmoji
+var drawHead = function(bitmojiX, bitmojiY, bitmojiHeight){
+     noStroke();
+ fill(255, 205,148);
+ ellipse(bitmojiX+(bitmojiHeight/100*100),bitmojiY+(bitmojiHeight/100*100),bitmojiHeight/100*83,bitmojiHeight/100*100);
+ fill(255, 255, 255);
+ arc(bitmojiX+(bitmojiHeight/100*58),bitmojiY+(bitmojiHeight/100*137),bitmojiHeight/100*28,bitmojiHeight/100*55,0,361);
+ fill(255, 255, 255);
+ arc(bitmojiX+(bitmojiHeight/100*141),bitmojiY+(bitmojiHeight/100*137),bitmojiHeight/100*28,bitmojiHeight/100*55,0,361);
+ fill(13, 12, 12);
+ quad(bitmojiX+(bitmojiHeight/100*50),bitmojiY+(bitmojiHeight/100*123),bitmojiX+(bitmojiHeight/100*63), bitmojiY+(bitmojiHeight/100*68),bitmojiX+(bitmojiHeight/100*90), bitmojiY+(bitmojiHeight/100*50),bitmojiX+(bitmojiHeight/100*76), bitmojiY+(bitmojiHeight/100*151));
+ fill(13, 12, 12);
+ quad(bitmojiX+(bitmojiHeight/100*149),bitmojiY+(bitmojiHeight/100*134),bitmojiX+(bitmojiHeight/100*140), bitmojiY+(bitmojiHeight/100*68),bitmojiX+(bitmojiHeight/100*113), bitmojiY+(bitmojiHeight/100*50),bitmojiX+(bitmojiHeight/100*128), bitmojiY+(bitmojiHeight/100*150));
+ ellipse(bitmojiX+(bitmojiHeight/100*100),bitmojiY+(bitmojiHeight/100*64),bitmojiHeight/100*62,bitmojiHeight/100*32);
+ fill(115, 23, 23);
+ ellipse(bitmojiX+(bitmojiHeight/100*90),bitmojiY+(bitmojiHeight/100*100),bitmojiHeight/100*6,bitmojiHeight/100*4);
+ fill(115, 23, 23);
+ ellipse(bitmojiX+(bitmojiHeight/100*117),bitmojiY+(bitmojiHeight/100*100),bitmojiHeight/100*6,bitmojiHeight/100*4);
+ stroke(23, 22, 23);
+ fill(255, 205,148);
+ bezier(bitmojiX+(bitmojiHeight/100*100),bitmojiY+(bitmojiHeight/100*100), bitmojiX+(bitmojiHeight/100*121), bitmojiY+(bitmojiHeight/100*122),bitmojiX+(bitmojiHeight/100*92), bitmojiY+(bitmojiHeight/100*120), bitmojiX+(bitmojiHeight/100*96), bitmojiY+(bitmojiHeight/100*115));
+ fill(255, 255, 255);
+ arc(bitmojiX+(bitmojiHeight/100*103),bitmojiY+(bitmojiHeight/100*125),bitmojiHeight/100*30,bitmojiHeight/100*13,1,180);
+ line(bitmojiX+(bitmojiHeight/100*82),bitmojiY+(bitmojiHeight/100*124),bitmojiX+(bitmojiHeight/100*119),bitmojiY+(bitmojiHeight/100*124));
+ rect(bitmojiX+(bitmojiHeight/100*65),bitmojiY+(bitmojiHeight/100*149),bitmojiHeight/100*83,bitmojiHeight/100*102);  
+   
+};
+
+var drawBitmojiBody = function(bitmojiX, bitmojiY, bitmojiHeight){
+ 
+ quad(bitmojiX+(bitmojiHeight/100*7),bitmojiY+(bitmojiHeight/100*165), bitmojiX+(bitmojiHeight/100*6), bitmojiY+(bitmojiHeight/100*185),bitmojiX+(bitmojiHeight/100*28), bitmojiY+(bitmojiHeight/100*181),bitmojiX+(bitmojiHeight/100*65), bitmojiY+(bitmojiHeight/100*173));
+ quad(bitmojiX+(bitmojiHeight/100*259),bitmojiY+(bitmojiHeight/100*205),bitmojiX+(bitmojiHeight/100*257), bitmojiY+(bitmojiHeight/100*187),bitmojiX+(bitmojiHeight/100*256), bitmojiY+(bitmojiHeight/100*181),bitmojiX+(bitmojiHeight/100*148), bitmojiY+(bitmojiHeight/100*181));
+ fill(252, 255, 102);
+ arc(bitmojiX+(bitmojiHeight/100*99),bitmojiY+(bitmojiHeight/100*67),bitmojiHeight/100*63,bitmojiHeight/100*57,178,360);
+ fill(18, 17, 17);
+ text("NR",bitmojiX+(bitmojiHeight/100*95),bitmojiY+(bitmojiHeight/100*189),bitmojiHeight/100*57,bitmojiHeight/100*62);
+ noFill();
+ arc(bitmojiX+(bitmojiHeight/100*113),bitmojiY+(bitmojiHeight/100*151),bitmojiHeight/100*38,bitmojiHeight/100*26,0,180);
+};
+
+
+var drawBitmoji = function(bitmojiX, bitmojiY, bitmojiHeight){
+    drawBitmojiBody(bitmojiX, bitmojiY, bitmojiHeight);
+    drawHead(bitmojiX, bitmojiY, bitmojiHeight);
+   
+};
+
+
+
+
+
+//unlocked phone functions
+
+
+
+var call_screen = function(){
+        
+    
+        //end call shapes
+        fill(166, 138, 155);
+        rect(96,0,230,399);
+        fill(64, 61, 61);
+        ellipse(210,331,50,50);
+        rect(145,356,128,30);
+        fill(255, 0, 0);
+        rect(187,327,45,6);
+        textSize(22);
+        text("END CALL",163,378);
+        drawBitmoji(106,35,89);
+         textSize(20);
+        text("Nancy",180,297);
+};
+
+//pictures app
+var pictures = function(){
+    fill(166, 138, 155);
+    rect(96,0,230,399);
+    drawBitmoji(86,34,123);
+    
+    rect(157,381,117,15);
+    //camera outline
+    noStroke();
+    
+    fill(255, 255, 255);
+    rect(117,38,50,6);
+    rect(251,38,50,6);
+    rect(295,38,6,50);
+    rect(117,38,6,50);
+    
+    rect(117,351,50,6);
+    rect(251,351,50,6);
+    rect(295,307,6,50);
+    rect(117,307,6,50);
+};
+
+//web browser app
+var web_app = function(){
+    //search bar
+    fill(255, 255, 255);
+    rect(96,0,230,399);
+    stroke(0, 0, 0);
+    rect(100,53,223,25);
+    textSize(20);
+    fill(99, 91, 99);
+    text("search",107,72);
+    
+    
+    fill(31, 2, 2);
+    textSize(24);
+    text("Favorites",164,173);
+    fill(255, 255, 255);
+    rect(157,381,117,15);
+    //camera outline
+    noStroke();
+    
+    //youtube
+    noFill();
+    rect(168,200,50,50);
+    fill(102, 0, 0);
+    stroke(255, 0, 0);
+    triangle(176,242,207,220,172,206);
+    textSize(12);
+    text("YouTube",167,265);
+    
+};
+
+
+
+
+
+
+//Splash Screen
+
+    background(186, 11, 11);
+    drawBitmoji(22,180,54);
+    textSize(20);
+    fill(0, 0, 0);
+    text("Cell Phone by Nancy", 91,150);
+    text("Click Here to Start",108,200);
+    rect(150,250,114,55);
+    textSize(30);
+    fill(161, 6, 6);
+    text("START",163,286);
+    
+
+
+//the phone has 2 modes, locked and unlocked.
+
+
+//LOCKED mode:when locked check if passcode is correct, if passcode is correct, unlock phone, else leave the phone locked
+
+
+//UNLOCKED MODE: while the phone is unlocked check which apps are being clicked and load them
+
+var locked = true;
+var buttons =[  false,false,false,      
+                false,false,false,
+                false,false,false ];
+                
+//LOCKED PHONE SCREEN://circles and numbers for passcode
+var draw_circle = function(ypos){
+for(var i=0;i<3;i++){
+    fill(32, 203, 212);
+    var xpos =140+(i*70);
+    ellipse(xpos,ypos,50,50);
+    fill(255, 255, 255);}
+};
+//phone lock screen
+var lock_screen = function(){
+stroke(255, 255, 255);
+fill(36, 76, 105);
+rect(96,0,230,399);
+fill(255, 252, 252);
+textSize(40);
+text(hour()+":"+minute(),166,55);
+//draw circles for locked screen
+for(var i=0;i<5;i++){
+    draw_circle(260);
+    draw_circle(120);
+    draw_circle(190);
+}
+
+//numbers
+textSize(20);
+text("1",135,125);  text("2",204,125);  text("3",276,125);
+text("4",135,197);  text("5",207,198);  text("6",275,197);
+text("7",135,271);  text("8",210,271);  text("9",276,268);
+};
+
+
+var draw_rect = function(ypos){
+for(var i=0;i<3;i++){
+    fill(255, 255, 255);
+    var xpos =115+(i*70);
+    rect(xpos,ypos,50,50);
+    }
+};
+
+//load unclocked phone screen
+var unlock_phone = function(){
+    stroke(0, 0, 0);
+    fill(24, 94, 163);
+      rect(96,0,230,399);
+     draw_rect(34);
+     draw_rect(99);
+     draw_rect(170);
+     draw_rect(245);
+     fill(252, 249, 249);
+     rect(160,386,112,8);
+     textSize(12);
+     //camera design
+     fill(74, 68, 68);
+     rect(116,123,48,4);
+     ellipse(140,125,30,30);
+     //call design
+     
+
+     rect(125,255,30,30);
+    
+    
+     //internet
+     ellipse(210,272,30,30);
+     fill(31, 252, 64);
+     text("call",127,278);
+     text("Internet",190,276);
+     text("Camera", 118,110);
+    
+     
+    
+    
+    
+   
+};
+
+    //camera outline
+    
+    noStroke();
+    
+     
+     
+//condition for phone to unlock
+
+    //check which buttons are clicked
+    
+  
+
+var mouseClicked = function(){
+    
+    if (mouseIsPressed && locked){
+        background(107, 104, 104);
+        lock_screen();
+    }
+    if(locked ===true){
+if (mouseIsPressed && mouseY>90 &&mouseY<150 && mouseX>114 && mouseX<160){
+        buttons[0] = true;
+    }
+    
+    if (mouseIsPressed && mouseY>90 &&mouseY<150 && mouseX>180 && mouseX<240){
+        buttons[1] = true;
+    }
+    
+    if (mouseIsPressed && mouseY>90 &&mouseY<150 && mouseX>250 && mouseX<310){
+        buttons[2] = true;
+    }
+    if (buttons[1]===true&& buttons[2]===true){
+    unlock_phone();
+    locked = false;
+    }
+    
+    
+}
+
+if (locked ===false){
+    
+    var app_opened = false;
+    
+   
+    if(mouseIsPressed && mouseY>240 &&mouseY<300 && mouseX>110 && mouseX<160){
+        call_screen();
+        app_opened = true;
+    }
+    
+    
+    if(mouseIsPressed && mouseY>55 &&mouseY<150 && mouseX>110 && mouseX<160){
+        pictures();
+        app_opened = true;
+    }
+    
+    
+    if(mouseIsPressed && mouseY>240 &&mouseY<300 && mouseX>180 && mouseX<240){
+        web_app();
+        app_opened = true;
+        
+    }
+
+    
+
+
+
+}
+
+
+};
+
+
+
